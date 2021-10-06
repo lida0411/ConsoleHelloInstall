@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	
+	<?if $(var.Platform)=x64 ?>
+	<?define ProductCode="{EC1523C0-207B-4DB1-81F0-6FB31AD63C11}"?>
+	<?else?>
+	<?define ProductCode="{00A84972-E887-4E5F-B6B3-14430E5BE626}"?>
+	<?endif?>
+	
+	<?define UpgradeCode = "{33d6ef64-8d65-42e6-abf9-364a0503407b}"?>
+	<?define BuildVersion = 1.2.3.4?>
+	<Product Id="$(var.ProductCode)" 
+			 Name="!(loc.ProductName_$(var.Platform))" 
+			 Language="1033" 
+			 Version="$(var.BuildVersion)" 
+			 Manufacturer="$(loc.Manufacturer)" 
+			 UpgradeCode="$(var.UpgradeCode)">
+		
+		<Package 
+			InstallerVersion="200" 
+			Compressed="yes"
+			InstallScope="perMachine"
+			Platform="$(var.Platform)"
+			Manufacturer="$(loc.Manufacturer)"/>
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+
+		<!--basic UI for the installer-->
+		<UIRef Id="WixUI_Minimal"/>
+		
+		<Feature Id="ProductFeature" Title="ConsoleHelloInstall.Installer" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+	
+
+	
+</Wix>

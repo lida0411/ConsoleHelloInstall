@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="en-us" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+	
+	<String Id="ProductName_x86">Consolle App Hello!(86 bit)</String>
+	<String Id="ProductName_x64">Consolle App Hello! (64 bit)</String>
+	<String Id="Manufacturer">Jass lab!</String>
+</WixLocalization>
